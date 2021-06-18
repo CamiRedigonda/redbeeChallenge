@@ -1,5 +1,6 @@
 package com.redbee.academy.challenge;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompareArrayNumbers {
@@ -13,27 +14,25 @@ public class CompareArrayNumbers {
    * @return The result of a + b
    */
   public static List<Integer> max(List<Integer> a, List<Integer> b) {
-    //TODO: Implement me
-    List<Integer> max = List.of();
+    List<Integer> max = new ArrayList<Integer>();
     Integer largoA = a.size();
     Integer largoB = b.size();
-    Integer largo = 0;
-    if (largoA > largoB){
-      largo += largoA;
-    }else{
-      largo += largoB;
-    }
+    Integer largo = Math.max(largoA, largoB);
     for (int i=0; i<largo; i++){
-      if(a.get(i)== null){
-        a.set(i, 0);
+      Integer p, q;
+      if(i >= largoA){
+        p = 0;
+      }else{
+        p = a.get(i);
       }
-      if(b.get(i)== null){
-        b.set(i, 0);
+      if(i >= largoB){
+        q = 0;
+      }else{
+        q = b.get(i);
       }
+      max.add(Math.max(p, q));
     }
-    for (int i=0; i<largo; i++){
-      max.add(Math.max(a.get(i), b.get(i)));
-    }
+    
     return max;
   }
 }
