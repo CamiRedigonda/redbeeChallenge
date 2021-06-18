@@ -14,9 +14,26 @@ public class CompareArrayNumbers {
    */
   public static List<Integer> max(List<Integer> a, List<Integer> b) {
     //TODO: Implement me
-    return null;
+    List<Integer> max = List.of();
+    Integer largoA = a.size();
+    Integer largoB = b.size();
+    Integer largo = 0;
+    if (largoA > largoB){
+      largo += largoA;
+    }else{
+      largo += largoB;
+    }
+    for (int i=0; i<largo; i++){
+      if(a.get(i)== null){
+        a.set(i, 0);
+      }
+      if(b.get(i)== null){
+        b.set(i, 0);
+      }
+    }
+    for (int i=0; i<largo; i++){
+      max.add(Math.max(a.get(i), b.get(i)));
+    }
+    return max;
   }
-
-
-
 }

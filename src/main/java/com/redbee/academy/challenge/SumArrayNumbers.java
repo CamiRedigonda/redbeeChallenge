@@ -13,6 +13,11 @@ public class SumArrayNumbers {
    */
   public static Integer sum(List<Integer> array) {
     //TODO: Implement me
-    return null;
+    Integer sum = 0;
+    Integer largo = array.size();
+    for (int i=0; i<largo; i++){
+      sum += array.get(i);
+    }
+    return sum;
   }
 }
